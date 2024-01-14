@@ -1,13 +1,243 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+/* Nav Styles */
+.navBar {
+  width: 100%;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgb(13, 16, 110);
+  padding: 0 3rem;
+  position: fixed;
+}
+.logo-container {
+  flex: 0.5;
+}
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+.navLinks {
+  flex: 0.33;
+}
+.navLinks {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  font-weight: 600;
+}
+.navLinks a {
+  text-decoration: none;
+  color: #fff;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navLinks li {
+  position: relative;
+}
+
+.navLinks li::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background: #fff;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  transition: 0.3s;
+}
+
+.navLinks li:hover::after {
+  width: 70%;
+}
+
+.button {
+  flex: 0.17;
+  display: flex;
+  justify-content: center;
+}
+.button .btn {
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.button .btn:hover {
+  background-color: #fff;
+  color: rgb(13, 16, 110);
+}
+
+/* Main Section */
+.mainSection {
+  height: 100vh;
+  width: 100%;
+  background: url("./Imgs/278694.jpg") center center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+.mainTitle {
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 8px rgba(13, 16, 110, 0.5);
+}
+.mainSection p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.mainButtons button {
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 0.2rem;
+  color: rgb(13, 16, 110);
+  text-transform: uppercase;
+  padding: 0.5rem 1.3rem;
+  cursor: pointer;
+  margin: 0 0.5rem;
+  transition: 0.3s;
+}
+.mainButtons button:hover {
+  background: transparent;
+  color: #fff;
+}
+
+/* section {
+  
+} */
+/* Image Section */
+.imageSection {
+  width: 80%;
+  margin: 0 auto 5rem;
+}
+.imageSection img {
+  width: 100%;
+  height: 100%;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+.row1 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+.row2 {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.imgText {
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  padding: 0 1.2rem;
+  font-size: 14px;
+}
+.img1,
+.img2,
+.img3,
+.img4,
+.img5 {
+  display: flex;
+  flex-direction: column;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  background: rgba(13, 16, 110);
+  color: #fff;
+}
+.img1:hover,
+.img2:hover,
+.img3:hover,
+.img4:hover,
+.img5:hover {
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.2);
+}
+footer {
+  width: 100%;
+  background: #222;
+  color: #fff;
+}
+.footerSection {
+  width: 80%;
+  margin: auto;
+  padding: 3rem;
+}
+.footerRow1 {
+  text-align: center;
+  line-height: 1.7;
+}
+.formGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  margin-top: 1rem;
+}
+.formGroup input {
+  width: 15rem;
+  padding: 0 0.5rem;
+  height: inherit;
+}
+.formGroup .footerBtn {
+  height: 1.9rem;
+  margin-left: 5px;
+  background: transparent;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #fff;
+  padding: 0.3rem 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.formGroup .footerBtn:hover {
+  background: #ffffff28;
+}
+.footerRow2 {
+  /* display: flex;
+  justify-content: space-around; */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin-top: 5rem;
+  list-style: none;
+}
+.footerRow2 h3 {
+  margin-bottom: 0.5rem;
+}
+.footerRow3 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 0;
+}
+.footerLogo a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+@media (max-width: 50rem) {
+  .footerRow2 {
+    transform: scale(0.9);
+  }
 }
